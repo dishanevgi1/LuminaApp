@@ -11,12 +11,17 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.firebase.BuildConfig;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.ktx.Firebase;
+
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        configureFirebaseServices();
         setContentView(R.layout.activity_main);
 
         // Handle window insets for edge-to-edge UI
@@ -38,5 +43,12 @@ public class MainActivity extends AppCompatActivity {
         }, 3000);
 
 
+    }
+
+    private void configureFirebaseServices() {
+        FirebaseApp.initializeApp(this);
+        if(BuildConfig.DEBUG){
+            FirebaseAuth auth = FirebaseAuth.getInstance();
+        }
     }
 }
