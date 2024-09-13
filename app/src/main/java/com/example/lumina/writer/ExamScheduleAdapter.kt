@@ -1,57 +1,34 @@
-package com.example.lumina.writer;
+package com.example.lumina.writer
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+import com.example.lumina.R
 
-import com.example.lumina.R;
+class ExamScheduleAdapter(private val examScheduleList: List<ExamSchedule>) : RecyclerView.Adapter<ExamScheduleAdapter.ExamScheduleViewHolder>() {
 
-import java.util.List;
-
-public class ExamScheduleAdapter extends RecyclerView.Adapter<ExamScheduleAdapter.ExamScheduleViewHolder> {
-
-    private List<ExamSchedule> examScheduleList;
-
-    public ExamScheduleAdapter(List<ExamSchedule> examScheduleList) {
-        this.examScheduleList = examScheduleList;
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExamScheduleViewHolder {
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_exam_schedule_writer, parent, false)
+        return ExamScheduleViewHolder(view)
     }
 
-    @NonNull
-    @Override
-    public ExamScheduleViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_exam_schedule_writer, parent, false);
-        return new ExamScheduleViewHolder(view);
+    override fun onBindViewHolder(holder: ExamScheduleViewHolder, position: Int) {
+        val examSchedule = examScheduleList[position]
+        holder.subjectTextView.text = examSchedule.subject
+        holder.dateTextView.text = examSchedule.date
+        holder.timeTextView.text = examSchedule.time
     }
 
-    @Override
-    public void onBindViewHolder(@NonNull ExamScheduleViewHolder holder, int position) {
-        ExamSchedule examSchedule = examScheduleList.get(position);
-        holder.subjectTextView.setText(examSchedule.getSubject());
-        holder.dateTextView.setText(examSchedule.getDate());
-        holder.timeTextView.setText(examSchedule.getTime());
+    override fun getItemCount(): Int {
+        return examScheduleList.size
     }
 
-    @Override
-    public int getItemCount() {
-        return examScheduleList.size();
-    }
-
-    static class ExamScheduleViewHolder extends RecyclerView.ViewHolder {
-        TextView subjectTextView;
-        TextView dateTextView;
-        TextView timeTextView;
-
-        public ExamScheduleViewHolder(@NonNull View itemView) {
-            super(itemView);
-            subjectTextView = itemView.findViewById(R.id.subjectTextView);
-            dateTextView = itemView.findViewById(R.id.dateTextView);
-            timeTextView = itemView.findViewById(R.id.timeTextView);
-        }
+    class ExamScheduleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val subjectTextView: TextView = itemView.findViewById(R.id.subjectTextView)
+        val dateTextView: TextView = itemView.findViewById(R.id.dateTextView)
+        val timeTextView: TextView = itemView.findViewById(R.id.timeTextView)
     }
 }
-
-

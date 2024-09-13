@@ -50,6 +50,7 @@ dependencies {
     implementation(libs.core.ktx)
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
+    implementation(libs.androidxActivity)
 
     // Firebase Dependencies
     implementation(platform(libs.firebase.bom)) // BOM for managing versions

@@ -3,6 +3,7 @@ package com.example.lumina.vi
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.Insets
 import androidx.core.view.ViewCompat
@@ -15,7 +16,7 @@ class ProfileActivityVi : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        EdgeToEdge.enable(this)
+        enableEdgeToEdge()
         setContentView(R.layout.profile_vi)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.profile_vi)) { v, insets ->

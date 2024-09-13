@@ -1,89 +1,74 @@
-package com.example.lumina.writer;
+package com.example.lumina.writer
 
-import android.content.Intent;
-import android.os.Bundle;
+import android.content.Intent
+import android.os.Bundle
+import android.view.View
+import android.widget.Button
+import android.widget.ImageView
+import androidx.activity.ComponentActivity
+import androidx.activity.enableEdgeToEdge
+import androidx.core.graphics.Insets
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import com.example.lumina.R
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+class WriterActivity : ComponentActivity() {
 
-import android.view.View;
-import android.widget.*;
+    private lateinit var availability: Button
+    private lateinit var notification: Button
+    private lateinit var queries: Button
+    private lateinit var help: Button
+    private lateinit var profile: ImageView
+    private lateinit var home: ImageView
+    private lateinit var settings: ImageView
 
-import com.example.lumina.R;
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_writer)
 
-public class WriterActivity extends AppCompatActivity {
-    Button availability, notification, queries, help;
-    ImageView profile, home, settings;
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.writer_homepage)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_writer);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.writer_homepage), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-        availability = findViewById(R.id.button1);
-        notification = findViewById(R.id.button2);
-        queries = findViewById(R.id.button3);
-        help = findViewById(R.id.button4);
+        availability = findViewById(R.id.button1)
+        notification = findViewById(R.id.button2)
+        queries = findViewById(R.id.button3)
+        help = findViewById(R.id.button4)
+        profile = findViewById(R.id.ivProfile)
+        home = findViewById(R.id.ivHome)
+        settings = findViewById(R.id.ivSetting)
 
-        home = findViewById(R.id.ivHome);
-        profile = findViewById(R.id.ivProfile);
-        settings = findViewById(R.id.ivSetting);
+        availability.setOnClickListener {
+            val intent = Intent(this, Availability_writers::class.java)
+            startActivity(intent)
+        }
 
-        availability.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // Create an Intent to start SecondActivity
-                Intent intent = new Intent(WriterActivity.this, Availability_writers.class);
-                startActivity(intent);
-            }
-        });
+        notification.setOnClickListener {
+            val intent = Intent(this, notification_writer::class.java)
+            startActivity(intent)
+        }
 
-        notification.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // Create an Intent to start SecondActivity
-                Intent intent = new Intent(WriterActivity.this, notification_writer.class);
-                startActivity(intent);
-            }
-        });
+        queries.setOnClickListener {
+            val intent = Intent(this, WriterActivity::class.java)
+            startActivity(intent)
+        }
 
-        queries.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // Create an Intent to start SecondActivity
-                Intent intent = new Intent(WriterActivity.this, WriterActivity.class);
-                startActivity(intent);
-            }
-        });
+        help.setOnClickListener {
+            val intent = Intent(this, help_resources_writers::class.java)
+            startActivity(intent)
+        }
 
-        help.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // Create an Intent to start SecondActivity
-                Intent intent = new Intent(WriterActivity.this, help_resources_writers.class);
-                startActivity(intent);
-            }
-        });
+        profile.setOnClickListener {
+            val intent = Intent(this, profileActivity_writer::class.java)
+            startActivity(intent)
+        }
 
-        profile.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // Create an Intent to start SecondActivity
-                Intent intent = new Intent(WriterActivity.this, profileActivity_writer.class);
-                startActivity(intent);
-            }
-        });
-
-        home.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // Create an Intent to start SecondActivity
-                Intent intent = new Intent(WriterActivity.this, WriterActivity.class);
-                startActivity(intent);
-            }
-        });
-
+        home.setOnClickListener {
+            val intent = Intent(this, WriterActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

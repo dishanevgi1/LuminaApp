@@ -1,57 +1,53 @@
-package com.example.lumina.writer;
+package com.example.lumina.writer
 
-import android.content.Intent;
-import android.os.Bundle;
+import android.content.Intent
+import android.os.Bundle
+import android.view.View
+import android.widget.Button
+import android.widget.ImageView
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.graphics.Insets
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import com.example.lumina.R
 
-import com.example.lumina.R;
+class HelpResourcesWriters : AppCompatActivity() {
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+    private lateinit var feedback: Button
+    private lateinit var profile: ImageView
+    private lateinit var home: ImageView
+    private lateinit var settings: ImageView
 
-import android.view.View;
-import android.widget.*;
-public class help_resources_writers extends AppCompatActivity {
-    Button feedback;
-    ImageView profile, home, settings;
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_help_resources_writers)
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_help_resources_writers);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.help_resources_writers), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-        feedback = findViewById(R.id.feedback);
-        profile = findViewById(R.id.ivProfile);
-        home = findViewById(R.id.ivHome);
-        settings = findViewById(R.id.ivSetting);
-        feedback.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // Create an Intent to start SecondActivity
-                Intent intent = new Intent(help_resources_writers.this, feedback_writers.class);
-                startActivity(intent);
-            }
-        });
-        profile.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // Create an Intent to start SecondActivity
-                Intent intent = new Intent(help_resources_writers.this, profileActivity_writer.class);
-                startActivity(intent);
-            }
-        });
-        home.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // Create an Intent to start SecondActivity
-                Intent intent = new Intent(help_resources_writers.this, WriterActivity.class);
-                startActivity(intent);
-            }
-        });
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.help_resources_writers)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
 
+        feedback = findViewById(R.id.feedback)
+        profile = findViewById(R.id.ivProfile)
+        home = findViewById(R.id.ivHome)
+        settings = findViewById(R.id.ivSetting)
+
+        feedback.setOnClickListener {
+            val intent = Intent(this, FeedbackWriters::class.java)
+            startActivity(intent)
+        }
+
+        profile.setOnClickListener {
+            val intent = Intent(this, ProfileActivityWriter::class.java)
+            startActivity(intent)
+        }
+
+        home.setOnClickListener {
+            val intent = Intent(this, WriterActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
