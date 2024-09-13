@@ -32,14 +32,14 @@ class AvailabilityWriters : AppCompatActivity() {
         binding.recyclerView.adapter = adapter
 
         // Set up click listeners
-        binding.ivProfile.setOnClickListener {
-            val intent = Intent(this, ProfileActivityWriter::class.java)
-            startActivity(intent)
-        }
-
-        binding.ivHome.setOnClickListener {
-            val intent = Intent(this, WriterActivity::class.java)
-            startActivity(intent)
-        }
+//        binding.ivProfile.setOnClickListener {
+//            val intent = Intent(this, ProfileActivityWriter::class.java)
+//            startActivity(intent)
+//        }
+//
+//        binding.ivHome.setOnClickListener {
+//            val intent = Intent(this, WriterActivity::class.java)
+//            startActivity(intent)
+//        }
     }
 }

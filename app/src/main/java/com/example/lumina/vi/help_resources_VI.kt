@@ -38,7 +38,7 @@ class HelpResourcesVI : ComponentActivity() {
         }
 
         profile.setOnClickListener {
-            val intent = Intent(this, ProfileActivityVI::class.java)
+            val intent = Intent(this, ProfileActivityVi::class.java)
             startActivity(intent)
         }
 

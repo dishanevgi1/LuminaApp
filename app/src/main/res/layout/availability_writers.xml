@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".writer.Availability_writers">
+    tools:context=".writer.AvailabilityWriters">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -60,7 +60,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Availability Management"
+            android:text="@string/availability_management"
             android:textColor="#5B5A5C"
             android:textSize="24sp"
             android:textStyle="bold|italic"

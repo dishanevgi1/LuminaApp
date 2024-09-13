@@ -17,9 +17,9 @@ class NotificationAdapterVi(private val notificationList: List<NotificationItemV
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val notification = notificationList[position]
-        holder.title.text = notification.getTitle()
-        holder.body.text = notification.getBody()
-        holder.time.text = notification.getTimestamp()
+        holder.title.text = notification.title
+        holder.body.text = notification.body
+        holder.time.text = notification.timestamp
     }
 
     override fun getItemCount(): Int {
