@@ -1,54 +1,34 @@
-package com.example.lumina.vi;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
+package com.example.lumina.vi
 
-import com.example.lumina.R;
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+import com.example.lumina.R
 
-import java.util.List;
+class NotificationAdapterVi(private val notificationList: List<NotificationItemViewsVi>) :
+    RecyclerView.Adapter<NotificationAdapterVi.ViewHolder>() {
 
-    public class NotificationAdapter_vi extends RecyclerView.Adapter<NotificationAdapter_vi.ViewHolder> {
-        private List<notification_item_views_vi> notificationList;
-
-        public NotificationAdapter_vi(List<notification_item_views_vi> notificationList) {
-            this.notificationList = notificationList;
-        }
-
-        @NonNull
-        @Override
-        public NotificationAdapter_vi.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.notification_item_views_vi, parent, false);
-            return new NotificationAdapter_vi.ViewHolder(view);
-        }
-
-        @Override
-        public void onBindViewHolder(NotificationAdapter_vi.ViewHolder holder, int position) {
-            notification_item_views_vi notification = notificationList.get(position);
-            holder.title.setText(notification.getTitle());
-            holder.body.setText(notification.getBody());
-            holder.time.setText(notification.getTimestamp());
-        }
-
-        @Override
-        public int getItemCount() {
-            return notificationList.size();
-        }
-
-        public static class ViewHolder extends RecyclerView.ViewHolder {
-            public TextView title;
-            public TextView body;
-            public TextView time;
-
-            public ViewHolder(View itemView) {
-                super(itemView);
-                title = itemView.findViewById(R.id.notification_title);
-                body = itemView.findViewById(R.id.notification_body);
-                time = itemView.findViewById(R.id.notification_timestamp);
-            }
-        }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.notification_item_views_vi, parent, false)
+        return ViewHolder(view)
     }
 
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val notification = notificationList[position]
+        holder.title.text = notification.getTitle()
+        holder.body.text = notification.getBody()
+        holder.time.text = notification.getTimestamp()
+    }
 
+    override fun getItemCount(): Int {
+        return notificationList.size
+    }
+
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val title: TextView = itemView.findViewById(R.id.notification_title)
+        val body: TextView = itemView.findViewById(R.id.notification_body)
+        val time: TextView = itemView.findViewById(R.id.notification_timestamp)
+    }
+}

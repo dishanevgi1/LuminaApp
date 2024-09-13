@@ -1,45 +1,43 @@
-package com.example.lumina.vi;
+package com.example.lumina.vi
 
-import android.os.Bundle;
+import android.content.Intent
+import android.os.Bundle
+import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.graphics.Insets
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import com.example.lumina.R
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-import android.content.Intent;
-import android.view.View;
-import android.widget.*;
-import com.example.lumina.R;
+class QueriesVi : AppCompatActivity() {
 
-public class queries_vi extends AppCompatActivity {
-ImageView profile,home;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_queries_vi);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.query_vi), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-        profile=findViewById(R.id.ivProfile);
-        home=findViewById(R.id.ivHome);
-        home.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // Create an Intent to start SecondActivity
-                Intent intent = new Intent(queries_vi.this, VIActivity.class);
-                startActivity(intent);
-            }
-        });
+    private lateinit var profile: ImageView
+    private lateinit var home: ImageView
 
-        profile.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // Create an Intent to start SecondActivity
-                Intent intent = new Intent(queries_vi.this, profileActivity_vi.class);
-                startActivity(intent);
-            }
-        });
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        EdgeToEdge.enable(this)
+        setContentView(R.layout.activity_queries_vi)
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.query_vi)) { v, insets ->
+            val systemBars: Insets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
+
+        profile = findViewById(R.id.ivProfile)
+        home = findViewById(R.id.ivHome)
+
+        home.setOnClickListener {
+            // Create an Intent to start VIActivity
+            val intent = Intent(this@QueriesVi, VIActivity::class.java)
+            startActivity(intent)
+        }
+
+        profile.setOnClickListener {
+            // Create an Intent to start ProfileActivityVi
+            val intent = Intent(this@QueriesVi, ProfileActivityVi::class.java)
+            startActivity(intent)
+        }
     }
 }

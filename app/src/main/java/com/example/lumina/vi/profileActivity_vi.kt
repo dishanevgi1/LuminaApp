@@ -1,39 +1,34 @@
-package com.example.lumina.vi;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.*;
+package com.example.lumina.vi
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import android.content.Intent
+import android.os.Bundle
+import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.graphics.Insets
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import com.example.lumina.R
 
-import com.example.lumina.R;
+class ProfileActivityVi : AppCompatActivity() {
 
+    private lateinit var home: ImageView
 
-public class profileActivity_vi extends AppCompatActivity {
-    ImageView home;
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        EdgeToEdge.enable(this)
+        setContentView(R.layout.profile_vi)
 
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.profile_vi);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.profile_vi), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-        home = findViewById(R.id.ivHome);
-        home.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // Create an Intent to start SecondActivity
-                Intent intent = new Intent(profileActivity_vi.this,VIActivity.class);
-                startActivity(intent);
-            }
-        });
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.profile_vi)) { v, insets ->
+            val systemBars: Insets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
 
-
+        home = findViewById(R.id.ivHome)
+        home.setOnClickListener {
+            // Create an Intent to start VIActivity
+            val intent = Intent(this@ProfileActivityVi, VIActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

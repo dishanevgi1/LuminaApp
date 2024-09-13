@@ -2,8 +2,6 @@ plugins {
     id("com.android.application")
     id("com.google.gms.google-services")
     alias(libs.plugins.kotlin.android)
-
-
 }
 
 android {
@@ -29,39 +27,37 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     buildFeatures {
         viewBinding = true
     }
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
 }
 
 dependencies {
-
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
-    implementation(libs.firebase.messaging)
+    implementation(libs.core.ktx)
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
-    implementation(libs.core.ktx)
+
+    // Firebase Dependencies
+    implementation(platform(libs.firebase.bom)) // BOM for managing versions
+    implementation(libs.firebase.auth) // Firebase Auth KTX
+    implementation(libs.firebase.messaging) // Firebase Messaging
+    implementation(libs.firebase.analytics) // Firebase Analytics
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-
-//    Firebase Dependencies
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.com.google.firebase.firebase.analytics)
-    implementation(libs.firebase.auth)
-    implementation (libs.google.firebase.auth)
-
-
-
-
 }
