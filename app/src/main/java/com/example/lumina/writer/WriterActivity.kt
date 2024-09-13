@@ -42,12 +42,12 @@ class WriterActivity : ComponentActivity() {
         settings = findViewById(R.id.ivSetting)
 
         availability.setOnClickListener {
-            val intent = Intent(this, Availability_writers::class.java)
+            val intent = Intent(this, AvailabilityWriters::class.java)
             startActivity(intent)
         }
 
         notification.setOnClickListener {
-            val intent = Intent(this, notification_writer::class.java)
+            val intent = Intent(this, NotificationWriter::class.java)
             startActivity(intent)
         }
 
@@ -57,12 +57,12 @@ class WriterActivity : ComponentActivity() {
         }
 
         help.setOnClickListener {
-            val intent = Intent(this, help_resources_writers::class.java)
+            val intent = Intent(this, HelpResourcesWriters::class.java)
             startActivity(intent)
         }
 
         profile.setOnClickListener {
-            val intent = Intent(this, profileActivity_writer::class.java)
+            val intent = Intent(this, ProfileActivityWriter::class.java)
             startActivity(intent)
         }
 

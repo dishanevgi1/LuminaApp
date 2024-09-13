@@ -45,12 +45,12 @@ class AdminActivity : AppCompatActivity() {
         home = findViewById(R.id.ivHome)
 
         notification.setOnClickListener {
-            val intent = Intent(this, notification_admin::class.java)
+            val intent = Intent(this, NotificationAdmin::class.java)
             startActivity(intent)
         }
 
         exam.setOnClickListener {
-            val intent = Intent(this, exam_Admin::class.java)
+            val intent = Intent(this, ExamAdmin::class.java)
             startActivity(intent)
         }
 
@@ -60,22 +60,22 @@ class AdminActivity : AppCompatActivity() {
         }
 
         queries.setOnClickListener {
-            val intent = Intent(this, queries_admin::class.java)
+            val intent = Intent(this, QueriesAdmin::class.java)
             startActivity(intent)
         }
 
         manage.setOnClickListener {
-            val intent = Intent(this, manage_writers::class.java)
+            val intent = Intent(this, ManageWriters::class.java)
             startActivity(intent)
         }
 
         help.setOnClickListener {
-            val intent = Intent(this, help_admin::class.java)
+            val intent = Intent(this, HelpAdmin::class.java)
             startActivity(intent)
         }
 
         profile.setOnClickListener {
-            val intent = Intent(this, profileActivity_admin::class.java)
+            val intent = Intent(this, ProfileActivityAdmin::class.java)
             startActivity(intent)
         }
     }

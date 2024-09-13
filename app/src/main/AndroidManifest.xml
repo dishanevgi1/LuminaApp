@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.lumina">
 
+    <!-- Permissions -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
@@ -14,57 +15,67 @@
         android:roundIcon="@mipmap/lumina_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.LUMINA"
-        tools:targetApi="34">
+        tools:targetApi="31">
+
+        <!-- Main Activity -->
         <activity
-            android:name=".vi.queries_vi"
-            android:exported="false"
-            android:theme="@style/Theme.LUMINA" />
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Login Activity -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+
         <!-- Admin Activities -->
         <activity
-            android:name=".admin.help_admin"
+            android:name=".admin.HelpAdmin"
             android:exported="false" />
         <activity
-            android:name=".admin.manage_writers"
+            android:name=".admin.ManageWriters"
             android:exported="false" />
         <activity
-            android:name=".admin.queries_admin"
+            android:name=".admin.QueriesAdmin"
             android:exported="false" />
         <activity
             android:name=".admin.AllotmentSchedule"
             android:exported="false" />
         <activity
-            android:name=".admin.exam_Admin"
+            android:name=".admin.ExamAdmin"
             android:exported="false"/>
         <activity
             android:name=".admin.AdminActivity"
             android:exported="false"/>
-
         <activity
-            android:name=".admin.notification_admin"
+            android:name=".admin.NotificationAdmin"
             android:exported="false"/>
         <activity
-            android:name=".admin.profileActivity_admin"
+            android:name=".admin.ProfileActivityAdmin"
             android:exported="false"/>
 
-
-         <!-- Writer Activities -->
+        <!-- Writer Activities -->
         <activity
             android:name=".writer.WriterActivity"
             android:exported="false" />
         <activity
-            android:name=".writer.Availability_writers"
+            android:name=".writer.AvailabilityWriters"
             android:exported="false" />
         <activity
-            android:name=".writer.feedback_writers"
+            android:name=".writer.FeedbackWriters"
             android:exported="false" />
         <activity
-            android:name=".writer.help_resources_writers"
+            android:name=".writer.HelpResourcesWriters"
             android:exported="false" />
         <activity
-            android:name=".writer.profileActivity_writer"
+            android:name=".writer.ProfileActivityWriter"
             android:exported="false" />
         <activity
-            android:name=".writer.notification_writer"
+            android:name=".writer.NotificationWriter"
             android:exported="false" />
 
         <!-- Visually Impaired (VI) Activities -->
@@ -72,30 +83,19 @@
             android:name=".vi.VIActivity"
             android:exported="false" />
         <activity
-            android:name=".vi.feedback_VI"
+            android:name=".vi.FeedbackVI"
             android:exported="false" />
         <activity
-            android:name=".vi.notification_vi"
+            android:name=".vi.NotificationVi"
             android:exported="false" />
         <activity
-            android:name=".vi.profileActivity_vi"
+            android:name=".vi.ProfileActivityVi"
             android:exported="false" />
         <activity
-            android:name=".vi.help_resources_VI"
+            android:name=".vi.HelpResourcesVI"
             android:exported="false" />
-        <!-- Main Activity -->
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity> <!-- Login Activity -->
-        <activity
-            android:name=".LoginActivity"
-            android:exported="false" /> <!-- Meta-data for Preloaded Fonts -->
+        <!-- Meta-data for Preloaded Fonts -->
         <meta-data
             android:name="android.preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

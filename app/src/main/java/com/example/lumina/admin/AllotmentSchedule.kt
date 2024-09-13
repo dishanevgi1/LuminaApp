@@ -34,7 +34,7 @@ class AllotmentSchedule : AppCompatActivity() {
         setting = findViewById(R.id.ivSetting)
 
         profile.setOnClickListener {
-            val intent = Intent(this@AllotmentSchedule, profileActivity_admin::class.java)
+            val intent = Intent(this@AllotmentSchedule, ProfileActivityAdmin::class.java)
             startActivity(intent)
         }
 

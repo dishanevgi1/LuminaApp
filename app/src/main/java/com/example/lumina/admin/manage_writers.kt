@@ -10,7 +10,7 @@ import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.lumina.R
 
-class HelpAdmin : AppCompatActivity() {
+class ManageWriters : AppCompatActivity() {
 
     private lateinit var home: ImageView
     private lateinit var profile: ImageView
