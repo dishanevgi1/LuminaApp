@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.lumina">
-
     <!-- Permissions -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
@@ -16,23 +15,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LUMINA"
         tools:targetApi="31">
-
+        <activity
+            android:name=".admin.AddExam"
+            android:exported="false" />
         <!-- Main Activity -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- Login Activity -->
+        </activity> <!-- Login Activity -->
         <activity
             android:name=".LoginActivity"
-            android:exported="false" />
-
-        <!-- Admin Activities -->
+            android:exported="false" /> <!-- Admin Activities -->
         <activity
             android:name=".admin.HelpAdmin"
             android:exported="false" />
@@ -47,18 +45,16 @@
             android:exported="false" />
         <activity
             android:name=".admin.ExamAdmin"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".admin.AdminActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".admin.NotificationAdmin"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".admin.ProfileActivityAdmin"
-            android:exported="false"/>
-
-        <!-- Writer Activities -->
+            android:exported="false" /> <!-- Writer Activities -->
         <activity
             android:name=".writer.WriterActivity"
             android:exported="false" />
@@ -76,9 +72,7 @@
             android:exported="false" />
         <activity
             android:name=".writer.NotificationWriter"
-            android:exported="false" />
-
-        <!-- Visually Impaired (VI) Activities -->
+            android:exported="false" /> <!-- Visually Impaired (VI) Activities -->
         <activity
             android:name=".vi.VIActivity"
             android:exported="false" />
@@ -93,9 +87,7 @@
             android:exported="false" />
         <activity
             android:name=".vi.HelpResourcesVI"
-            android:exported="false" />
-
-        <!-- Meta-data for Preloaded Fonts -->
+            android:exported="false" /> <!-- Meta-data for Preloaded Fonts -->
         <meta-data
             android:name="android.preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

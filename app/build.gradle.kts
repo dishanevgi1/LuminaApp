@@ -57,6 +57,7 @@ dependencies {
     implementation(libs.firebase.auth) // Firebase Auth KTX
     implementation(libs.firebase.messaging) // Firebase Messaging
     implementation(libs.firebase.analytics) // Firebase Analytics
+    implementation(libs.firebase.database)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
