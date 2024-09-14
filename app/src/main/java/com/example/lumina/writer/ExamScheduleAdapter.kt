@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.lumina.ExamSchedule
 import com.example.lumina.R
 
 class ExamScheduleAdapter(private val examScheduleList: List<ExamSchedule>) : RecyclerView.Adapter<ExamScheduleAdapter.ExamScheduleViewHolder>() {

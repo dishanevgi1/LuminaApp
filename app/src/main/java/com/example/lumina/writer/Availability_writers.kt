@@ -1,10 +1,9 @@
 package com.example.lumina.writer
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.lumina.R
+import com.example.lumina.ExamSchedule
 import com.example.lumina.databinding.AvailabilityWritersBinding
 
 class AvailabilityWriters : AppCompatActivity() {

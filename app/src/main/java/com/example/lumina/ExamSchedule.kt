@@ -1,4 +1,4 @@
-package com.example.lumina.writer
+package com.example.lumina
 
 data class ExamSchedule(
     val subject: String,

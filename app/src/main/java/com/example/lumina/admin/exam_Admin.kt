@@ -43,5 +43,10 @@ class ExamAdmin : AppCompatActivity() {
             val intent = Intent(this@ExamAdmin, AdminActivity::class.java)
             startActivity(intent)
         }
+
+        addButton.setOnClickListener {
+            val intent = Intent(this@ExamAdmin, AddExam::class.java)
+            startActivity(intent)
+        }
     }
 }
