@@ -11,16 +11,15 @@
         android:id="@+id/imageView19"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="535dp"
+        android:adjustViewBounds="true"
         android:contentDescription="@string/background_image"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.516"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/background"
-        tools:ignore="VisualLintBounds" />
+        tools:srcCompat="@drawable/background" />
 
     <ImageView
         android:id="@+id/imageView20"
@@ -35,21 +34,21 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:gravity="center"
-        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
             android:text="@string/enter_exam_details"
             android:textSize="24sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="24dp" />
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/exam_subject"
@@ -91,8 +90,8 @@
             android:id="@+id/submitButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/submit"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:text="@string/submit" />
 
     </LinearLayout>
 

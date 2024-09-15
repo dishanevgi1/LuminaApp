@@ -11,6 +11,7 @@ import com.example.lumina.R
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
+import com.example.lumina.R.*
 
 class AdminActivity : AppCompatActivity() {
     private lateinit var notification: Button
@@ -25,24 +26,24 @@ class AdminActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_admin)
+        setContentView(layout.activity_admin)
 
-        val rootView = findViewById<View>(R.id.admin)
+        val rootView = findViewById<View>(id.admin)
         ViewCompat.setOnApplyWindowInsetsListener(rootView) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        notification = findViewById(R.id.button)
-        exam = findViewById(R.id.button1)
-        allotment = findViewById(R.id.button2)
-        queries = findViewById(R.id.button3)
-        manage = findViewById(R.id.button4)
-        help = findViewById(R.id.button5)
+        notification = findViewById(id.btn_notification)
+        exam = findViewById(id.btn_exams)
+        allotment = findViewById(id.btn_allotments)
+        queries = findViewById(id.btn_queries)
+        manage = findViewById(id.btn_mwriters)
+        help = findViewById(id.btn_help)
 
-        profile = findViewById(R.id.ivProfile)
-        home = findViewById(R.id.ivHome)
+        profile = findViewById(id.ivProfile)
+        home = findViewById(id.ivHome)
 
         notification.setOnClickListener {
             val intent = Intent(this, NotificationAdmin::class.java)

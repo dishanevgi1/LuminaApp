@@ -64,4 +64,20 @@
     <string name="enter_exam_time">Enter exam time</string>
     <string name="submit">Submit</string>
     <string name="lumina_logo">Lumina Logo</string>
+    <string name="exam">Exam</string>
+    <string name="allotment_schedule">Allotments</string>
+    <string name="manage_writers">Manage Writers</string>
+    <string name="language_btn">Language Button</string>
+    <string name="notification_image">Notification image</string>
+    <string name="exam_image">Exam image</string>
+    <string name="allotment_image">Allotment image</string>
+    <string name="notification_btn">Notification button</string>
+    <string name="exam_btn">Exam button</string>
+    <string name="allotment_btn">Allotments button</string>
+    <string name="queries_image">Queries Image</string>
+    <string name="mwriters_image">Manage writers image</string>
+    <string name="help_image">Help image\n</string>
+    <string name="queries_btn">Queries button</string>
+    <string name="mwriters_btn">Manage writers button</string>
+    <string name="help_btn">Help button\n</string>
 </resources>
