@@ -109,7 +109,8 @@
                 android:layout_marginRight="10dp"
                 android:layout_weight="53"
                 android:contentDescription="@string/notification_btn"
-                android:text="@string/notification" />
+                android:text="@string/notification"
+                android:textSize="14sp"/>
 
             <Button
                 android:id="@+id/btn_exams"
@@ -119,7 +120,8 @@
                 android:layout_marginRight="10dp"
                 android:layout_weight="45"
                 android:contentDescription="@string/exam_btn"
-                android:text="@string/exam" />
+                android:text="@string/exam"
+                android:textSize="14sp"/>
 
             <Button
                 android:id="@+id/btn_allotments"
@@ -129,7 +131,8 @@
                 android:layout_marginRight="10dp"
                 android:layout_weight="52"
                 android:contentDescription="@string/allotment_btn"
-                android:text="@string/allotment_schedule" />
+                android:text="@string/allotment_schedule"
+                android:textSize="14sp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -186,7 +189,8 @@
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:contentDescription="@string/queries_btn"
-                android:text="@string/queries" />
+                android:text="@string/queries"
+                android:textSize="14sp"/>
 
             <Button
                 android:id="@+id/btn_mwriters"
@@ -194,7 +198,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:contentDescription="@string/mwriters_btn"
-                android:text="@string/manage_writers" />
+                android:text="@string/manage_writers"
+                android:textSize="14sp"/>
 
             <Button
                 android:id="@+id/btn_help"
@@ -205,7 +210,8 @@
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:contentDescription="@string/help_btn"
-                android:text="@string/help" />
+                android:text="@string/help"
+                android:textSize="14sp"/>
         </LinearLayout>
 
         <include layout="@layout/layout_bottom_bar" />
