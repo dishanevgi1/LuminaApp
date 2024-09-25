@@ -66,9 +66,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:adjustViewBounds="true"
-            android:contentDescription="@string/exam_image"
+            android:contentDescription="@string/queries_image"
             android:paddingLeft="20dp"
-            app:srcCompat="@drawable/exam" />
+            app:srcCompat="@drawable/query" />
 
         <ImageView
             android:id="@+id/icon_allotments"
@@ -76,10 +76,38 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:adjustViewBounds="true"
-            android:contentDescription="@string/allotment_image"
+            android:contentDescription="@string/help_image"
             android:scaleX="0.80"
             android:scaleY="0.80"
-            app:srcCompat="@drawable/delegate" />
+            app:srcCompat="@drawable/help" />
 
     </LinearLayout>
+
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notification"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="444dp" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Querries"
+        app:layout_constraintEnd_toStartOf="@+id/button7"
+        app:layout_constraintStart_toEndOf="@+id/button5"
+        tools:layout_editor_absoluteY="444dp" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Help"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="444dp" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
