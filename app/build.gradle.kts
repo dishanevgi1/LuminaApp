@@ -58,6 +58,7 @@ dependencies {
     implementation(libs.firebase.messaging) // Firebase Messaging
     implementation(libs.firebase.analytics) // Firebase Analytics
     implementation(libs.firebase.database)
+    implementation(libs.play.services.wearable)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)

@@ -108,8 +108,10 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="53"
+                android:autoSizeTextType="uniform"
                 android:contentDescription="@string/notification_btn"
-                android:text="@string/notification" />
+                android:text="@string/notification"
+                tools:targetApi="o" />
 
             <Button
                 android:id="@+id/btn_exams"
@@ -119,7 +121,9 @@
                 android:layout_marginRight="10dp"
                 android:layout_weight="45"
                 android:contentDescription="@string/exam_btn"
-                android:text="@string/exam" />
+                android:text="@string/exam"
+                android:autoSizeTextType="uniform"
+                tools:targetApi="o"/>
 
             <Button
                 android:id="@+id/btn_allotments"
@@ -129,7 +133,9 @@
                 android:layout_marginRight="10dp"
                 android:layout_weight="52"
                 android:contentDescription="@string/allotment_btn"
-                android:text="@string/allotment_schedule" />
+                android:text="@string/allotment_schedule"
+                android:autoSizeTextType="uniform"
+                tools:targetApi="o"/>
         </LinearLayout>
 
         <LinearLayout

@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.lumina.admin.AdminActivity
 import com.example.lumina.vi.VIActivity
 import com.example.lumina.writer.WriterActivity
+import com.google.firebase.Firebase
+import com.google.firebase.auth.auth
 
 class LoginActivity : AppCompatActivity() {
 
@@ -32,6 +34,9 @@ class LoginActivity : AppCompatActivity() {
         adminRadioButton = findViewById(R.id.radioButton4)
         writerRadioButton = findViewById(R.id.radioButton5)
         studentRadioButton = findViewById(R.id.radioButton6)
+
+        val auth = Firebase.auth
+
 
         submitButton.setOnClickListener {
             val username = usernameEditText.text.toString().trim()
