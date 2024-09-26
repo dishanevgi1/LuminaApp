@@ -41,4 +41,6 @@ class ManageWriters : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
+
 }
