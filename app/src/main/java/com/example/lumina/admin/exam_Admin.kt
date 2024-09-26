@@ -25,7 +25,7 @@ class ExamAdmin : AppCompatActivity() {
     private lateinit var profile: ImageView
     private lateinit var home: ImageView
     private lateinit var addButton: Button
-    private lateinit var database: DatabaseReference
+    private lateinit var database:  DatabaseReference
     private lateinit var adapter: DataAdapter
     private lateinit var recyclerView: RecyclerView
 

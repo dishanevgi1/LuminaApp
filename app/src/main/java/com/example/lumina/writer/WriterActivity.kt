@@ -27,42 +27,42 @@ class WriterActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_writer)
 
-        val rootView = findViewById<View>(R.id.activity_writer)
-        ViewCompat.setOnApplyWindowInsetsListener(rootView) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+//        val rootView = findViewById<View>(R.id.activity_writer)
+//        ViewCompat.setOnApplyWindowInsetsListener(rootView) { v, insets ->
+//            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+//            insets
+//        }
 
-//
-//        availability = findViewById(R.id.button3)
-//        notification = findViewById(R.id.button4)
-//        queries = findViewById(R.id.button5)
-//        help = findViewById(R.id.button6)
+
+        availability = findViewById(R.id.button3)
+        notification = findViewById(R.id.button4)
+        queries = findViewById(R.id.button8)
+        help = findViewById(R.id.button9)
 //        profile = findViewById(R.id.ivProfile)
 //        home = findViewById(R.id.ivHome)
 //        settings = findViewById(R.id.ivSetting)
 
-//        availability.setOnClickListener {
-//            val intent = Intent(this, AvailabilityWriters::class.java)
-//            startActivity(intent)
-//        }
-//
-//        notification.setOnClickListener {
-//            val intent = Intent(this, NotificationWriter::class.java)
-//            startActivity(intent)
-//        }
-//
-//        queries.setOnClickListener {
-//            val intent = Intent(this, WriterActivity::class.java)
-//            startActivity(intent)
-//        }
-//
-//        help.setOnClickListener {
-//            val intent = Intent(this, HelpResourcesWriters::class.java)
-//            startActivity(intent)
-//        }
-//
+        availability.setOnClickListener {
+            val intent = Intent(this, AvailabilityWriters::class.java)
+            startActivity(intent)
+        }
+
+        notification.setOnClickListener {
+            val intent = Intent(this, NotificationWriter::class.java)
+            startActivity(intent)
+        }
+
+        queries.setOnClickListener {
+            val intent = Intent(this, WriterActivity::class.java)
+            startActivity(intent)
+        }
+
+        help.setOnClickListener {
+            val intent = Intent(this, HelpResourcesWriters::class.java)
+            startActivity(intent)
+        }
+
 //        profile.setOnClickListener {
 //            val intent = Intent(this, ProfileActivityWriter::class.java)
 //            startActivity(intent)
@@ -71,6 +71,6 @@ class WriterActivity : ComponentActivity() {
 //        home.setOnClickListener {
 //            val intent = Intent(this, WriterActivity::class.java)
 //            startActivity(intent)
-//        }
+//       }
     }
 }

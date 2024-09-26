@@ -59,6 +59,7 @@ dependencies {
     implementation(libs.firebase.analytics) // Firebase Analytics
     implementation(libs.firebase.database)
     implementation(libs.play.services.wearable)
+    implementation(libs.firebase.database.ktx)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)

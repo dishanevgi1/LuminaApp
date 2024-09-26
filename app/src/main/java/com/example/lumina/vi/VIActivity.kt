@@ -29,9 +29,9 @@ class VIActivity : AppCompatActivity() {
             insets
         }
 
-        notification = findViewById(R.id.button)
-        queries = findViewById(R.id.button1)
-        help = findViewById(R.id.button2)
+        notification = findViewById(R.id.button5)
+        queries = findViewById(R.id.button6)
+        help = findViewById(R.id.button7)
         profile = findViewById(R.id.ivProfile)
 
         notification.setOnClickListener {

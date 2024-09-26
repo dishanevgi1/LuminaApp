@@ -81,4 +81,6 @@
     <string name="mwriters_btn">Manage writers button</string>
     <string name="help_btn">Help button\n</string>
     <string name="availability">Availability</string>
+    <string name="please_type_your_query">Please type your query</string>
+    <string name="writers">writers</string>
 </resources>

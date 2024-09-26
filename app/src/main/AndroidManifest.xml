@@ -57,7 +57,8 @@
             android:exported="false" /> <!-- Writer Activities -->
         <activity
             android:name=".writer.WriterActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:launchMode="singleTop"/>
         <activity
             android:name=".writer.AvailabilityWriters"
             android:exported="false" />

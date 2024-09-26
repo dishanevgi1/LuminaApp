@@ -11,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lumina.R
+import com.google.firebase.database.*
 
 class NotificationAdmin : AppCompatActivity() {
 
@@ -19,6 +20,7 @@ class NotificationAdmin : AppCompatActivity() {
     private lateinit var notificationList: MutableList<NotificationItemViewsAdmin>
     private lateinit var profile: ImageView
     private lateinit var home: ImageView
+    private lateinit var database: DatabaseReference
 
     @SuppressLint("WrongViewCast")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,21 +36,18 @@ class NotificationAdmin : AppCompatActivity() {
         recyclerView = findViewById(R.id.recycleview)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
+        database = FirebaseDatabase.getInstance().getReference("Exams")
+
         // Initialize the list and adapter
         notificationList = mutableListOf()
-        // Add sample notifications (in a real app, fetch from a data source)
-        notificationList.add(NotificationItemViewsAdmin("New Notification", "A Writer is available for Marathi subject on 21/07/2024", "10:00 AM"))
-        notificationList.add(NotificationItemViewsAdmin("New Notification", "A Writer is available for English subject on 22/07/2024", "11:00 AM"))
-        notificationList.add(NotificationItemViewsAdmin("New Notification", "A Writer is available for SS subject on 23/07/2024", "12:00 PM"))
-        notificationList.add(NotificationItemViewsAdmin("New Notification", "A Writer is available for Hindi subject on 24/07/2024", "01:00 PM"))
-        notificationList.add(NotificationItemViewsAdmin("New Notification", "A Writer is available for History subject on 25/07/2024", "02:00 PM"))
-
         // Set up the adapter
         adapter = NotificationAdapterAdmin(notificationList)
         recyclerView.adapter = adapter
 
         profile = findViewById(R.id.ivProfile)
         home = findViewById(R.id.ivHome)
+
+        listenForDatabaseChanges()
 
         profile.setOnClickListener {
             val intent = Intent(this@NotificationAdmin, ProfileActivityAdmin::class.java)
@@ -60,4 +59,36 @@ class NotificationAdmin : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
+    private fun listenForDatabaseChanges() {
+        database.addChildEventListener(object : ChildEventListener {
+            override fun onChildAdded(dataSnapshot: DataSnapshot, previousChildName: String?) {
+                // Retrieve new notification data from the snapshot
+                val notificationItem = dataSnapshot.getValue(NotificationItemViewsAdmin::class.java)
+
+                // Add the notification to the list and notify the adapter
+                if (notificationItem != null) {
+                    notificationList.add(notificationItem)
+                    adapter.notifyItemInserted(notificationList.size - 1)
+                }
+            }
+
+            override fun onChildChanged(snapshot: DataSnapshot, previousChildName: String?) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onChildRemoved(snapshot: DataSnapshot) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onChildMoved(snapshot: DataSnapshot, previousChildName: String?) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
+}
 }
