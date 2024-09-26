@@ -22,7 +22,7 @@ class QueriesAdmin : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_queries_admin)
+        setContentView(R.layout.activity_addqueries_admin)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.query_admin)) { view, insets ->
             val systemBars: Insets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
